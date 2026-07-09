@@ -41,7 +41,7 @@ const INSTITUTE_DATA = [
 
 INSTITUTE_DATA.forEach((inst, index) => {
   const id = index + 1;
-  const uniquePassword = "Gest@123";
+  const uniquePassword = "Guest@123";
 
   INSTITUTES.push({
     id: id,
