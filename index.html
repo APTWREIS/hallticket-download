@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall Ticket Download</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Libraries (CDNs) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- ========================== 1. LOGIN PORTAL ========================== -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-container">
+
+      <!-- Login Input Form Card -->
+      <div class="login-card">
+        <div class="login-brand">
+          <div class="logo-icon">
+            <i data-lucide="graduation-cap"></i>
+          </div>
+          <h2>AP Gurukulam Portal</h2>
+        </div>
+        <div class="login-title">
+          <h3>Institute Login</h3>
+          <p>Please enter your credentials to open and print your institute's student hall tickets.</p>
+        </div>
+        <form id="loginForm" class="login-form">
+          <div id="loginError" class="login-error hidden">
+            <i data-lucide="alert-circle"></i>
+            <span id="loginErrorText">Invalid username or password. Please check once.</span>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="e.g. emrs01" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" id="loginBtn" class="login-btn">
+            <i data-lucide="log-in"></i> Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================== 2. DASHBOARD RUNTIME ========================== -->
+  <main id="appDashboard" class="app-dashboard">
+
+    <!-- Application Header -->
+    <header class="app-header">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <i data-lucide="file-text"></i>
+        </div>
+        <div>
+          <h1>EMRS Hall Ticket Download</h1>
+          <p>AP Tribal Welfare Residential Educational Institutions Society (Gurukulam)</p>
+        </div>
+      </div>
+
+      <!-- User Profile Badge & Actions -->
+      <div class="session-info">
+        <div class="institute-badge">
+          <span class="institute-badge-label">LOGGED IN INSTITUTE</span>
+          <span id="sessionInstName" class="institute-badge-name">Loading...</span>
+          <span id="sessionInstCode" style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;">Code:
+            Loading...</span>
+        </div>
+        <div class="header-actions">
+          <button id="logoutBtn" class="btn btn-danger">
+            <i data-lucide="log-out"></i> Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Simplified Single-Column Layout -->
+    <div class="dashboard-layout">
+      <section class="main-content">
+
+        <!-- Search, Select and Action Toolbar -->
+        <div class="toolbar">
+          <div class="search-wrapper">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="searchQuery" class="search-input"
+              placeholder="Search your institute's students by ID, Name, Hall Ticket No...">
+          </div>
+
+          <div id="adminFilterWrapper" class="admin-filter-wrapper hidden">
+            <label for="adminInstFilter">Institute:</label>
+            <select id="adminInstFilter" class="admin-filter-select">
+              <option value="all">All Institutions</option>
+              <!-- Populated dynamically via app.js -->
+            </select>
+          </div>
+
+          <div class="selection-controls">
+            <label class="checkbox-container">
+              <input type="checkbox" id="selectAll" checked>
+              <span class="checkmark"></span>
+              Select All
+            </label>
+            <span id="selectedCountBadge" class="selected-badge">0 Selected</span>
+            <button id="printSelectedBtn" class="btn btn-primary">
+              <i data-lucide="printer"></i> Print Selected
+            </button>
+            <button id="printAllBtn" class="btn btn-secondary">
+              Print All
+            </button>
+          </div>
+        </div>
+
+        <!-- Student Cards Grid -->
+        <div id="studentGrid" class="student-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- ========================== PRINT WORKSPACE ========================== -->
+  <div id="printContainer" class="print-container">
+    <!-- Populated dynamically via printHallTickets() in app.js during print trigger -->
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+
+</html>
