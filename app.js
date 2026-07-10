@@ -15,7 +15,7 @@ const INSTITUTE_DATA = [
   { name: "EMRS(Co-Edu),Kotikapenta", code: "28121204105" },
   { name: "EMRS(Co-Edu),Kurupam", code: "28120305828" },
   { name: "EMRS(Co-Edu),GLPuram", code: "28120207003" },
-  { name: "EMRS(Co-Edu),K.Veedhi", code: "28131306710" },
+  { name: "EMRS(Co-Edu),G.K.Veedhi", code: "28131306710" },
   { name: "EMRS(Co-Edu),Ananthagiri", code: "28137100093" },
   { name: "EMRS(Co-Edu),Arakuvalley", code: "28137100094" },
   { name: "EMRS(Co-Edu),Paderu", code: "28137100095" },
