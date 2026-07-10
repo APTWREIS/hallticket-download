@@ -436,7 +436,7 @@ function renderStudentList() {
         <div class="student-info">
           <h4 class="student-name">${student.candidateName || 'Unnamed Student'}</h4>
           <p class="student-id">ID: <span>${student.candidateId || 'N/A'}</span></p>
-          <p class="student-detail">DOB: <span>${student.dob || 'N/A'}</span> | Gender: <span>${student.gender || 'N/A'}</span></p>
+          <p class="student-detail">Gender: <span>${student.gender || 'N/A'}</span></p>
           <p class="student-detail">Aadhar: <span>${student.aadharNumber || 'N/A'}</span></p>
           <p class="student-detail">Institute: <span>${instName}</span></p>
         </div>
