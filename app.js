@@ -520,6 +520,7 @@ function printHallTickets(onlySelected = false, specificStudents = null) {
           </div>
           <div class="header-text-container">
             <h1>AP Tribal Welfare Residential Educational Institutions Society (Gurukulam)</h1>
+            <h2><strong>Eklavya Model Residential Schools</strong></h2>
             <h2>National Education Society for Tribal Students (NESTS) - Under the Ministry of Tribal Affairs , New Delhi</h2>
           </div>
           <div class="header-logo-right">
@@ -656,7 +657,7 @@ function printHallTickets(onlySelected = false, specificStudents = null) {
 }
 
 // Global handler for missing photos and signatures to show a text placeholder
-window.handleImageError = function(img, type) {
+window.handleImageError = function (img, type) {
   img.onerror = null;
   img.style.display = 'none';
   const placeholder = img.nextElementSibling;
